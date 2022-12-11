@@ -3,4 +3,4 @@ WORKDIR /usr/app/frontend
 COPY package.json .
 RUN yarn install 
 COPY . .
-RUN yarn dev
+RUN yarn dev 
