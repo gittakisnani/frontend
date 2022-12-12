@@ -119,7 +119,8 @@ export default function Home() {
             <div className="row">
               <div className="content">
                 <h1 className="title">
-                  <span>thétiptop</span> play <span>=</span> win<span>!</span>
+                  <span>thétiptop</span> play <span>=</span> win
+                  <span>! - update</span>
                 </h1>
                 <div className="ticket-form">
                   <form onSubmit={handleSubmit(onSubmit)}>
