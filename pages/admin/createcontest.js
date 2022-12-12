@@ -20,7 +20,7 @@ const CreateContest = () => {
 
   useEffect(() => {
     if (localStorage.getItem("accessToken") == null) {
-      router.push("http://localhost:3000/login");
+      router.push("https://dsp-archiwebo21-ss-da-om-en.fr/login");
     }
     getPrices();
   }, []);
@@ -90,7 +90,7 @@ const CreateContest = () => {
   //   // }).then((res) => {
   //   //   if (res.status === 200) {
 
-  //   //     router.push("http://localhost:3000/admin/addemployee")
+  //   //     router.push("https://dsp-archiwebo21-ss-da-om-en.fr/admin/addemployee")
   //   //   }
   //   // });
   // };
@@ -127,7 +127,7 @@ const CreateContest = () => {
       alert("Entered Data is invalid");
     } else if (res.status == "201") {
       alert("Contest Created Successfully");
-      router.push("http://localhost:3000/admin/contestlist");
+      router.push("https://dsp-archiwebo21-ss-da-om-en.fr/admin/contestlist");
     }
 
     // alert('SUCCESS!! :-)\n\n' + JSON.stringify(data, null, 4));

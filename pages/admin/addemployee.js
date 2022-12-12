@@ -27,18 +27,18 @@ const AddEmployee = () => {
         console.log(user);
       } else {
         console.log("ELSE");
-        router.push("http://localhost:3000/login");
+        router.push("https://dsp-archiwebo21-ss-da-om-en.fr/login");
       }
     } catch (err) {
       console.log(err);
       console.log("CATCH");
-      router.push("http://localhost:3000/login");
+      router.push("https://dsp-archiwebo21-ss-da-om-en.fr/login");
     }
 
     if (userType === "User") {
-      router.push("http://localhost:3000");
+      router.push("https://dsp-archiwebo21-ss-da-om-en.fr");
     } else if (userType === "Employee") {
-      router.push("http://localhost:3000");
+      router.push("https://dsp-archiwebo21-ss-da-om-en.fr");
     } else {
       getempList();
     }

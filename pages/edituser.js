@@ -50,7 +50,7 @@ const EditUser = () => {
       const data = await res.json();
       localStorage.setItem("accessToken", data.accessToken);
       alert("User details updated");
-      router.push("http://localhost:3000/viewuser");
+      router.push("https://dsp-archiwebo21-ss-da-om-en.fr/viewuser");
     } else if (res.status == "422") {
       alert("User details update not success");
     }

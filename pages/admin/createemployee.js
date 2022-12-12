@@ -30,7 +30,7 @@ const CreateEmployee = () => {
       }
     ).then((res) => {
       if (res.status === 200) {
-        router.push("http://localhost:3000/admin/addemployee");
+        router.push("https://dsp-archiwebo21-ss-da-om-en.fr/admin/addemployee");
       }
     });
   };

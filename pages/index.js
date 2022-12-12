@@ -55,7 +55,7 @@ export default function Home() {
   const onSubmit = async (e) => {
     const token = localStorage.getItem("accessToken");
     if (token == null) {
-      router.push("http://localhost:3000/login");
+      router.push("https://dsp-archiwebo21-ss-da-om-en.fr/login");
     }
 
     try {
@@ -79,7 +79,7 @@ export default function Home() {
       if (res.status == "201") {
         localStorage.setItem("ticketId", response.ticketId);
         localStorage.setItem("contestId", response.contestId);
-        router.push("http://localhost:3000/spinner");
+        router.push("https://dsp-archiwebo21-ss-da-om-en.fr/spinner");
       } else if (res.status == "422") {
         alert("Entered ticket id is invalid ");
       }

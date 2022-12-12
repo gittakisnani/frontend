@@ -93,7 +93,7 @@ const Spinner = () => {
         if (response.status == "204") {
           localStorage.removeItem("ticketId");
           localStorage.removeItem("contestId");
-          router.push("http://localhost:3000/viewhistory");
+          router.push("https://dsp-archiwebo21-ss-da-om-en.fr/viewhistory");
         }
       });
   };

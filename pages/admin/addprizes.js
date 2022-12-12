@@ -12,7 +12,7 @@ const AddPrizes = () => {
   const [winningChance, SetWinningChance] = useState();
   useEffect(() => {
     if (localStorage.getItem("accessToken") == null) {
-      router.push("http://localhost:3000/login");
+      router.push("https://dsp-archiwebo21-ss-da-om-en.fr/login");
     }
     getPrices();
   }, []);

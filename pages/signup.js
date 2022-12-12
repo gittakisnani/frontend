@@ -30,7 +30,7 @@ const Signup = () => {
       if (!data.error) {
         if (data.isAlreadySignUp) {
           localStorage.setItem("accessToken", data.accessToken);
-          router.push("http://localhost:3000");
+          router.push("https://dsp-archiwebo21-ss-da-om-en.fr");
         } else {
           setEmail(data.user._json.email);
           setName(data.user._json.name);
@@ -50,13 +50,15 @@ const Signup = () => {
         const user = jwt.verify(token, jwtSecretKey);
 
         if (user.userType === "User") {
-          router.push("http://localhost:3000");
+          router.push("https://dsp-archiwebo21-ss-da-om-en.fr");
         } else if (user.userType === "Admin") {
-          router.push("http://localhost:3000/admin/contestlist");
+          router.push(
+            "https://dsp-archiwebo21-ss-da-om-en.fr/admin/contestlist"
+          );
         } else if (user.userType === "Employee") {
-          router.push("http://localhost:3000");
+          router.push("https://dsp-archiwebo21-ss-da-om-en.fr");
         } else {
-          router.push("http://localhost:3000");
+          router.push("https://dsp-archiwebo21-ss-da-om-en.fr");
         }
       } else {
         console.log("Not log");
@@ -94,7 +96,7 @@ const Signup = () => {
       const data = await res.json();
       localStorage.setItem("accessToken", data.accessToken);
       alert("Successfully Registered");
-      router.push("http://localhost:3000");
+      router.push("https://dsp-archiwebo21-ss-da-om-en.fr");
     } else {
     }
   };

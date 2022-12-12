@@ -8,7 +8,6 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { logout } from "./UserFacade";
 
-
 const SideMenu = () => {
   const router = useRouter();
 
@@ -16,7 +15,7 @@ const SideMenu = () => {
   //   console.log('clicked')
   //   try {
   //     localStorage.removeItem("accessToken");
-  //     router.push("http://localhost:3000");
+  //     router.push("https://dsp-archiwebo21-ss-da-om-en.fr");
   //     // setUser(null);
   //   } catch (err) {
   //     console.log(err);
@@ -70,7 +69,14 @@ const SideMenu = () => {
       </Link>
 
       <div className="sidebarlogout">
-        <button onClick={()=>{logout();router.push("http://localhost:3000");}}><IoLogOutSharp /></button>
+        <button
+          onClick={() => {
+            logout();
+            router.push("https://dsp-archiwebo21-ss-da-om-en.fr");
+          }}
+        >
+          <IoLogOutSharp />
+        </button>
         <p>Log out</p>
       </div>
     </div>

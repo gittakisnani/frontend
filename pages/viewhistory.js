@@ -30,17 +30,17 @@ const viewHistory = () => {
         userType = user.userType;
         setUserId(user.userId);
       } else {
-        router.push("http://localhost:3000/login");
+        router.push("https://dsp-archiwebo21-ss-da-om-en.fr/login");
       }
     } catch (err) {
       console.log(err);
-      router.push("http://localhost:3000/login");
+      router.push("https://dsp-archiwebo21-ss-da-om-en.fr/login");
     }
 
     if (userType === "Admin") {
-      router.push("http://localhost:3000/admin/contestlist");
+      router.push("https://dsp-archiwebo21-ss-da-om-en.fr/admin/contestlist");
     } else if (userType === "Employee") {
-      router.push("http://localhost:3000");
+      router.push("https://dsp-archiwebo21-ss-da-om-en.fr");
     } else {
       axios
         .get(

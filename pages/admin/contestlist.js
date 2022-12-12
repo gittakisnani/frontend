@@ -34,7 +34,7 @@ const ContestList = () => {
 
   const viewContest = (contestid) => {
     console.log("id", contestid);
-    router.push("http://localhost:3000/admin/" + contestid);
+    router.push("https://dsp-archiwebo21-ss-da-om-en.fr/admin/" + contestid);
   };
 
   return (
