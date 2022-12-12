@@ -8,22 +8,24 @@ import { useRouter } from "next/router";
 const ViewCurrentContest = () => {
   const router = useRouter();
   const { contestid } = router.query;
-  console.log("contestid :", contestid);
+  // console.log("contestid :", contestid);
   const [contest, setContest] = useState([]);
 
   useEffect(() => {
     const contestId = localStorage.getItem("contestId");
+  if(contestid){
     axios
-      .get(
-        "https://dsp-archiwebo21-ss-da-om-en.fr/api/v1/contests/" + contestid
-      )
-      .then((response) => {
-        console.log(response.data);
-        setContest(response.data);
-      });
+    .get(
+      "https://dsp-archiwebo21-ss-da-om-en.fr/api/v1/contests/" + contestid
+    )
+    .then((response) => {
+      console.log(response.data);
+      setContest(response.data);
+    });
+  }
 
     console.log("www", contest.name);
-  }, []);
+  }, [contestid]);
 
   return (
     <div>
