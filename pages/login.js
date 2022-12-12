@@ -24,7 +24,7 @@ const Login = () => {
   const signIn = async (e) => {
     e.preventDefault();
     const res = await fetch(
-      "http://dsp-archiwebo21-ss-da-om-en.fr/api/v1/auth/sign-in",
+      "https://dsp-archiwebo21-ss-da-om-en.fr/api/v1/auth/sign-in",
       {
         method: "post",
         headers: {
