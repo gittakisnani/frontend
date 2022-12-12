@@ -20,10 +20,10 @@ const Header = () => {
         </div>
         <div>
           <div className={navActive ? "links active" : "links"}>
-            <Link href="/" className="active">
+            <Link href="/" style="color:var(--secoundary)">
               HOME
             </Link>
-            <Link href="/legalnotice">legal notice contest</Link>
+            <Link href="/legalnotice" style="color:var(--secoundary);">legal notice contest</Link>
           </div>
         </div>
         <div className="outerdd">
