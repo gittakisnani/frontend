@@ -20,10 +20,10 @@ const WhiteHeader = () => {
         </div>
         <div>
           <div className={navActive ? "links active" : "links"}>
-            <Link href="/" className="active">
+            <Link href="/" className="active" style={{color:"black"}}>
               HOME
             </Link>
-            <Link href="/legalnotice">legal notice contest</Link>
+            <Link href="/legalnotice" style={{color:"black"}}>legal notice contest</Link>
           </div>
         </div>
         <div className="outerdd">
