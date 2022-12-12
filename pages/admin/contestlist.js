@@ -46,13 +46,13 @@ const ContestList = () => {
             <div className="contest-list">
               <div className="headerwithbutton">
                 <div>
-                  <h2>Contest List</h2>
+                  <h2>Liste du concours</h2>
                 </div>
                 {!activeContestExists ? (
                   <div>
                     <Link href="/admin/createcontest">
                       <button>
-                        <BsPlusLg /> New Contest
+                        <BsPlusLg /> Nouveau concours
                       </button>
                     </Link>
                   </div>
@@ -62,7 +62,7 @@ const ContestList = () => {
                       disabled={true}
                       style={{ backgroundColor: "#B2BEB5" }}
                     >
-                      <BsPlusLg /> New Contest
+                      <BsPlusLg /> Nouveau concours
                     </button>
                   </div>
                 )}
@@ -72,10 +72,10 @@ const ContestList = () => {
                 <table>
                   <tbody>
                     <tr>
-                      <th>Contest name</th>
-                      <th>Start date</th>
-                      <th>End date</th>
-                      <th>Status</th>
+                      <th>Nom du concours</th>
+                      <th>Date de début</th>
+                      <th>Date de fin</th>
+                      <th>Statut</th>
                     </tr>
                     {contests.map((contest) => {
                       if (contest.status === "Active") {
@@ -104,7 +104,7 @@ const ContestList = () => {
                                     viewContest(contest._id);
                                   }}
                                 >
-                                  View Contest
+                                  Voir le concours
                                 </button>
                               </Link>
                             </td>
@@ -129,7 +129,7 @@ const ContestList = () => {
                                 new Date(contest.endDate).getFullYear()}
                             </td>
                             <td>
-                              <button>Select Final Prize winner</button>
+                              <button>Sélectionnez le gagnant du prix final</button>
                             </td>
                           </tr>
                         );
@@ -151,7 +151,7 @@ const ContestList = () => {
                                 "." +
                                 new Date(contest.endDate).getFullYear()}
                             </td>
-                            <td>End</td>
+                            <td>Fin</td>
                           </tr>
                         );
                       }

@@ -15,7 +15,7 @@ const ViewUsers = () => {
           <div className="block active">
             <div className="contest-list">
               <div className="headerwithbutton">
-                <div><h2>Contest Participents</h2></div>
+                <div><h2>Participants au concours</h2></div>
                 <div>
                 <div className="search">
                 <input type="text" placeholder="Search" onChange={(e)=>search(e.target.value)} />

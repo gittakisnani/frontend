@@ -90,7 +90,7 @@ const Login = () => {
         <main>
           <div className="container">
             <form action="#" className="sign">
-              <h1>Login</h1>
+              <h1>LoConnexiongin</h1>
               <div className="fild">
                 <div className="i">
                   <BsEnvelope />
@@ -119,7 +119,7 @@ const Login = () => {
                   signIn(e);
                 }}
               >
-                Login
+                Connexion
               </button>
               <div className="social">
                 <button
@@ -134,7 +134,7 @@ const Login = () => {
                 </button>
               </div>
               <p className="ask">
-                Don't have an account? <a href="/signup">Sign Up</a>
+              vous n'avez pas de compte ? <a href="/signup">S'inscrire</a>
               </p>
             </form>
           </div>

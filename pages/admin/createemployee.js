@@ -62,7 +62,7 @@ const CreateEmployee = () => {
           <div className="wrapSection">
             <div className="block active">
               <div className="create-employee">
-                <h2>Add Employee</h2>
+                <h2>Ajouter un employé</h2>
                 <form onSubmit={handleSubmit(onSubmit)}>
                   {name}
                   <input
@@ -115,7 +115,7 @@ const CreateEmployee = () => {
                     {errors.password?.message}
                   </div>
                   <br />
-                  <button type="submit">Add Employee</button>
+                  <button type="submit">Ajouter un employé</button>
                 </form>
               </div>
             </div>

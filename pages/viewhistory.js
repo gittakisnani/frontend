@@ -76,19 +76,19 @@ const viewHistory = () => {
       <div className="viewhistorycontainer">
         <div className="contest-result">
           <h2>
-            costest result will be published on{" "}
+          le résultat le plus coûteux sera publié le{" "}
             <span>{activeContestEndDate}</span>
           </h2>
         </div>
         <div className="winning-order">
-          <h2>Your winning prize status</h2>
+          <h2>Votre statut de prix gagnant</h2>
           <div className="table">
             <table>
               <tbody>
                 <tr>
-                  <th>Prize number</th>
-                  <th>Prize name</th>
-                  <th>Status</th>
+                  <th>Numéro du prix</th>
+                  <th>Nom du prix</th>
+                  <th>Statut</th>
                 </tr>
 
                 {data.length > 0 &&
@@ -110,15 +110,15 @@ const viewHistory = () => {
         </div>
 
         <div className="history">
-          <h2>Your contest history</h2>
+          <h2>Votre historique de concours</h2>
           <div className="table">
             <table>
               <tbody>
                 <tr>
-                  <th>Costest name</th>
+                  <th>Nom du coût le plus élevé</th>
                   <th>Date</th>
-                  <th>Prize</th>
-                  <th>Contest draw</th>
+                  <th>Prix</th>
+                  <th>Tirage au sort du concours</th>
                 </tr>
                 {data.length > 0 &&
                   data

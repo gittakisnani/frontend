@@ -31,11 +31,11 @@ const ChangePrizeSTatus = () => {
                 <table>
                   <tbody>
                     <tr>
-                      <th>Name</th>
-                      <th>Email</th>
-                      <th>Ticket id</th>
-                      <th>Prize</th>
-                      <th>Prize Status</th>
+                      <th>Nom</th>
+                      <th>E-mail</th>
+                      <th>ID de billets</th>
+                      <th>Prix</th>
+                      <th>Statut du prix</th>
                     </tr>
                     <tr>
                         <td>eeee</td>

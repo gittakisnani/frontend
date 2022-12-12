@@ -120,8 +120,8 @@ export default function Home() {
             <div className="row">
               <div className="content">
                 <h1 className="title">
-                  <span>thétiptop</span> play <span>=</span> win
-                  <span>! - update</span>
+                  <span>thétiptop</span>
+                  <br></br> Jouer <span>=</span> Gagner
                 </h1>
                 <div className="ticket-form">
                   <form onSubmit={handleSubmit(onSubmit)}>
@@ -133,7 +133,7 @@ export default function Home() {
                         errors.ticketid ? "is-invalid" : ""
                       }`}
                     />
-                    <button type="submit">Check ticket</button>
+                    <button type="submit">Vérifier le billet</button>
                   </form>
                   <div className="invalid-feedback2">
                     {errors.ticketid?.message}
@@ -147,9 +147,10 @@ export default function Home() {
             <img src="/leav.png" className="overlay" alt="" />
           </div>
         </main>
-        <div>
+        <footer>
           <div className="container">
             <div id="mc_embed_signup">
+              <h3 className="tst">Inscription à la newsletter</h3>
               <form
                 action="https://gmail.us11.list-manage.com/subscribe/post?u=17eb0fc9f60a035f869b0fafd&amp;id=5805488496&amp;f_id=00b18de0f0"
                 method="post"
@@ -172,41 +173,35 @@ export default function Home() {
                       // style={{display: none}}
                     ></div>
                   </div>
-                  <footer className="indexfooter">
-                    <div className="signup">
-                      <div
-                        className="mc-field-group"
-                        style={{ marginLeft: "50px" }}
-                      >
-                        <input
-                          type="email"
-                          name="EMAIL"
-                          placeholder="Email"
-                          className="required email"
-                          id="mce-EMAIL"
-                          required
-                        />
-                        <span
-                          id="mce-EMAIL-HELPERTEXT"
-                          className="helper_text"
-                        ></span>
-                      </div>
-                      <div className="optionalParent">
-                        <div className="clear foot">
-                          <button
-                            type="submit"
-                            value="Subscribe"
-                            name="subscribe"
-                            id="mc-embedded-subscribe"
-                            className="button"
-                          >
-                            Subscribe
-                          </button>
-                        </div>
+                  <div className="signup">
+                    <div className="mc-field-group">
+                      <input
+                        type="email"
+                        name="EMAIL"
+                        placeholder="Email"
+                        className="required email"
+                        id="mce-EMAIL"
+                        required
+                      />
+                      <span
+                        id="mce-EMAIL-HELPERTEXT"
+                        className="helper_text"
+                      ></span>
+                    </div>
+                    <div className="optionalParent">
+                      <div className="clear foot">
+                        <button
+                          type="submit"
+                          value="Subscribe"
+                          name="subscribe"
+                          id="mc-embedded-subscribe"
+                          className="button"
+                        >
+                          Subscribe
+                        </button>
                       </div>
                     </div>
-                  </footer>
-
+                  </div>
                   {/* real people should not fill this in and expect good things - do not remove this or risk form bot signups */}
                   <div
                     style={{ position: "absolute", left: "-5000px" }}
@@ -248,7 +243,7 @@ export default function Home() {
 
             <div className="other-info"></div>
           </div>
-        </div>
+        </footer>
         <script src="app.js"></script>
       </div>
     </>

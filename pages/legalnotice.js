@@ -3,10 +3,11 @@ import Header from '../components/Header';
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination } from "swiper";
+import SwiperCore, { Autoplay,Pagination }  from "swiper";
 
 
 const legalnotice = () => {
+    SwiperCore.use([Autoplay])
     return (
         <div className="legalnotice">
 
@@ -63,40 +64,64 @@ const legalnotice = () => {
             <div className='slider-section'>
                 <h1>Les Gains</h1>
                 <Swiper
+                  breakpoints={{
+                    // when window width is >= 640px
+                    640: {
+                     
+                      slidesPerView: 1,
+                    },
+                    // when window width is >= 768px
+                    768: {
+                    
+                      slidesPerView: 3,
+                    },
+                  }}
                     pagination={{
                     dynamicBullets: true,
                     }}
+                    
+                    autoplay={true}
+                    loop={true}
                     modules={[Pagination]}
                     className="mySwiper"
                     style={{width: "80%", display: "flex", justifyContent: "center", alignItems: "center", marginTop: "2rem"}}
                 >
                     <SwiperSlide>
-                        <div style={{backgroundColor: "#4a4d50", height: "38rem", width: "38rem", borderRadius: "50%"}}></div>
+                        <div style={{backgroundColor: "#4a4d50", height: "38rem", width: "38rem", borderRadius: "50%" ,margin:"0 auto",display:"flex",justifyContent:"center",alignItems:"center"}}>
+                        <p style={{color:"#fff",padding:"10px"}}>
+                        un infuseur à thé  
+                        </p>
+                        </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div style={{backgroundColor: "#4a4d50", height: "38rem", width: "38rem", borderRadius: "50%"}}></div>
+                        <div style={{backgroundColor: "#4a4d50", height: "38rem", width: "38rem", borderRadius: "50%",margin:"0 auto",display:"flex",justifyContent:"center",alignItems:"center"}}>
+                            <p style={{color:"#fff",padding:"10px"}}>
+                            une boite de 100g d’un thé détox ou d’infusion
+                            </p>
+                        </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div style={{backgroundColor: "#4a4d50", height: "38rem", width: "38rem", borderRadius: "50%"}}></div>
+                        <div style={{backgroundColor: "#4a4d50", height: "38rem", width: "38rem", borderRadius: "50%",margin:"0 auto",display:"flex",justifyContent:"center",alignItems:"center"}}>
+                            <p style={{color:"#fff",padding:"10px"}}>
+                            une boite de 100g d’un thé signature
+                            </p>
+                        </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div style={{backgroundColor: "#4a4d50", height: "38rem", width: "38rem", borderRadius: "50%"}}></div>
+                        <div style={{backgroundColor: "#4a4d50", height: "38rem", width: "38rem", borderRadius: "50%",margin:"0 auto",display:"flex",justifyContent:"center",alignItems:"center"}}>
+                            <p style={{color:"#fff",padding:"10px"}}>
+                            un coffret découverte d’une valeur de 39€
+                            </p>
+                        </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div style={{backgroundColor: "#4a4d50", height: "38rem", width: "38rem", borderRadius: "50%"}}></div>
+                        <div style={{backgroundColor: "#4a4d50", height: "38rem", width: "38rem", borderRadius: "50%",margin:"0 auto",display:"flex",justifyContent:"center",alignItems:"center"}}>
+                            <p style={{color:"#fff",padding:"10px"}}>
+                            un coffret découverte d’une valeur de 69€
+                            </p>
+                        </div>
                     </SwiperSlide>
-                    <SwiperSlide>
-                        <div style={{backgroundColor: "#4a4d50", height: "38rem", width: "38rem", borderRadius: "50%"}}></div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div style={{backgroundColor: "#4a4d50", height: "38rem", width: "38rem", borderRadius: "50%"}}></div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div style={{backgroundColor: "#4a4d50", height: "38rem", width: "38rem", borderRadius: "50%"}}></div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div style={{backgroundColor: "#4a4d50", height: "38rem", width: "38rem", borderRadius: "50%"}}></div>
-                    </SwiperSlide>
+                 
                 </Swiper>
                 <div className='grand-prix'>
                     <h1>grand prix</h1>

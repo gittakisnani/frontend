@@ -79,12 +79,12 @@ const AddEmployee = () => {
               <div className="contest-list">
                 <div className="headerwithbutton">
                   <div>
-                    <h2>Employees</h2>
+                    <h2>Des employés</h2>
                   </div>
                   <div>
                     <Link href="/admin/createemployee">
                       <button>
-                        <BsPlusLg /> New Employee
+                        <BsPlusLg /> Nouvel employé
                       </button>
                     </Link>
                   </div>
@@ -93,9 +93,9 @@ const AddEmployee = () => {
                   <table>
                     <tbody>
                       <tr>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Delete</th>
+                        <th>NamNome</th>
+                        <th>E-mail</th>
+                        <th>Effacer</th>
                       </tr>
                       {employees.length > 0 &&
                         employees

@@ -66,9 +66,9 @@ const EditUser = () => {
           <div className="block active">
             <div className="profile-edit">
               <form action="#" className="sign">
-                <h1>Edit profile</h1>
+                <h1>Editer le profil</h1>
                 <div className="rowofedit">
-                  <div className="rowofeditInner">Name :</div>
+                  <div className="rowofeditInner">Nom :</div>
                   <div>
                     <div className="fild">
                       <i className="uil uil-user"></i>
@@ -85,7 +85,7 @@ const EditUser = () => {
                 </div>
 
                 <div className="rowofedit">
-                  <div className="rowofeditInner">Email :</div>
+                  <div className="rowofeditInner">E-mail :</div>
                   <div>
                     <div className="fild">
                       <i className="uil uil-envelope"></i>
@@ -106,11 +106,11 @@ const EditUser = () => {
                     className="submit"
                     onClick={(e) => editUserDetails(e)}
                   >
-                    Save changes
+                    Sauvegarder les modifications
                   </button>
                   <Link href="/viewuser">
                     <button className="submit" type="reset">
-                      Cancel
+                    Annuler
                     </button>
                   </Link>
                 </div>

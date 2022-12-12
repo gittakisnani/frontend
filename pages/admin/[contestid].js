@@ -36,11 +36,11 @@ const ViewCurrentContest = () => {
             <div className="contest-list">
               <div className="headerwithbutton">
                 <div>
-                  <h2>Current Contest : {}</h2>
+                  <h2>Concours en cours : {}</h2>
                 </div>
                 <div>
                   <Link href="/admin/contestlist">
-                    <button> Back </button>
+                    <button> Retour </button>
                   </Link>
                 </div>
               </div>
@@ -48,19 +48,19 @@ const ViewCurrentContest = () => {
                 <h2>{contest.name}</h2>
                 <div className="table">
                   <div className="outerrow">
-                    <div className="viewtb">Contest Name : </div>{" "}
+                    <div className="viewtb">Nom du concours : </div>{" "}
                     <div>{contest.name}</div>
                   </div>
                   <div className="outerrow">
-                    <div className="viewtb">Start Date : </div>{" "}
+                    <div className="viewtb">Date de début : </div>{" "}
                     <div>{contest.startDate}</div>
                   </div>
                   <div className="outerrow">
-                    <div className="viewtb">End Date : </div>{" "}
+                    <div className="viewtb">Date de fin : </div>{" "}
                     <div>{contest.endDate}</div>
                   </div>
                   <div className="outerrow">
-                    <div className="viewtb">Status : </div>{" "}
+                    <div className="viewtb">Statut : </div>{" "}
                     <div>{contest.status}</div>
                   </div>
                 </div>

@@ -161,7 +161,7 @@ const CreateContest = () => {
         <div className="wrapSection">
           <div className="block active">
             <div className="create-contest">
-              <h2>Create contest</h2>
+              <h2>Créer un concours</h2>
               <form onSubmit={handleSubmit(onSubmit)}>
                 <input
                   type="text"
@@ -172,7 +172,7 @@ const CreateContest = () => {
                     errors.contestName ? "is-invalid" : ""
                   }`}
                 />
-                <span className="fieldname">Start date</span>
+                <span className="fieldname">Date de début</span>
                 <div className="invalid-feedback">
                   {errors.contestName?.message}
                 </div>
@@ -185,7 +185,7 @@ const CreateContest = () => {
                     errors.startDate ? "is-invalid" : ""
                   }`}
                 />
-                <span className="fieldname">End date</span>
+                <span className="fieldname">Date de fin</span>
                 <div className="invalid-feedback">
                   {errors.startDate?.message}
                 </div>
@@ -218,21 +218,21 @@ const CreateContest = () => {
                 <div className="items">
                   {sum < 100 ? (
                     <h3>
-                      Choose prize{" "}
+                      Choisissez le prix{" "}
                       <span className="NormalIndicator">
                         {" (" + sum + " % selected)"}
                       </span>
                     </h3>
                   ) : sum == 100 ? (
                     <h3>
-                      Choose prize{" "}
+                      Choisissez le prix{" "}
                       <span className="OkIndicator">
                         {" (" + sum + " % selected)"} <BsFillCheckCircleFill />
                       </span>
                     </h3>
                   ) : (
                     <h3>
-                      Choose prize{" "}
+                      Choisissez le prix{" "}
                       <span className="ExeededIndicator">
                         {" (" + sum + " % selected)"}
                       </span>
@@ -261,7 +261,7 @@ const CreateContest = () => {
                     </div>
                   ))}
                 </div>
-                <span className="fieldname">Select main prize</span>
+                <span className="fieldname">Sélectionnez le prix principal</span>
                 <select name="mainPrice" id="" {...register("mainPrice")}>
                   {prize
                     .filter((prize) => prize.checked == 0)
@@ -273,7 +273,7 @@ const CreateContest = () => {
                 </select>
                 {sum === 100 ? (
                   <button type="submit" disabled={false}>
-                    Create contest
+                    Créer un concours
                   </button>
                 ) : (
                   <button
@@ -281,7 +281,7 @@ const CreateContest = () => {
                     disabled={true}
                     style={{ backgroundColor: "grey" }}
                   >
-                    Create contest
+                    Créer un concours
                   </button>
                 )}
               </form>

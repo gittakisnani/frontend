@@ -111,13 +111,13 @@ const Spinner = () => {
               {segmants.length > 0 ? (
                 <CountdownTimer targetDate={dateTimeAfterThreeDays} />
               ) : null}
-              <h2>Prizes</h2>
+              <h2>Prix</h2>
               <div className="table">
                 <table>
                   <tbody>
                     <tr>
-                      <th>Number</th>
-                      <th>Prize name</th>
+                      <th>Numéro</th>
+                      <th>Nom du prix</th>
                     </tr>
                     {segmants?.map((prize, index = 0) => (
                       <tr key={index}>
@@ -147,7 +147,7 @@ const Spinner = () => {
                 />
               </div>
             ) : (
-              <div> You Already played</div>
+              <div> Vous avez déjà joué</div>
             )}
           </div>
         </div>

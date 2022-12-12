@@ -36,7 +36,7 @@ const home = () => {
       {/* counter */}
       <div className="client-info">
         <div className="total-client c">
-          <h4>total des client</h4>
+          <h4>total des clients</h4>
           <h2>{data ? data.totalParticipent : "..."}</h2>
           <HiUsers className="icon-c" />
         </div>
@@ -51,7 +51,7 @@ const home = () => {
       <div className="graphs">
         <div>
           <div className="total-tickets">
-            <h3>Total Tickets</h3>
+            <h3>Nombre total de billets</h3>
             <div>
               <h4>total des ticket</h4>
               <h2>{data ? data.totalTicket : "..."}</h2>
@@ -60,7 +60,7 @@ const home = () => {
           </div>
 
           <div className="total-tickets">
-            <h3>Total Tickets Left</h3>
+            <h3>Total des billets restants</h3>
             <div style={{ backgroundColor: "red" }}>
               <h4>total des ticket left</h4>
               <h2>{data ? data.totalTicketLeft : "..."}</h2>

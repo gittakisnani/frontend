@@ -22,16 +22,16 @@ const Header = () => {
 
           <div className={navActive ? "links active" : "links"}>
             <Link href="/" style={{color:"var(--secoundary)"}}>
-              HOME
+            DOMICILE
             </Link>
-            <Link href="/legalnotice" style={{color:"var(--secoundary)"}}>legal notice contest</Link>
+            <Link href="/legalnotice" style={{color:"var(--secoundary)"}}>concours mentions légales</Link>
           </div>
         </div>
         <div className="outerdd">
           <div className="dd">
             {user == null ? (
               <Link href="/login">
-                <button>Login</button>
+                <button>Connexion</button>
               </Link>
             ) : (
               <div>

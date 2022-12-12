@@ -62,15 +62,15 @@ const AddPrizes = () => {
       <SideMenu />
       <div className="block active">
         <div className="prize-board">
-          <h2>Prizes</h2>
+          <h2>Prix</h2>
           <div className="table">
             <table>
               <tbody>
                 <tr>
-                  <th>Number</th>
-                  <th>Prize name</th>
-                  <th>Winning chance</th>
-                  <th>Delete</th>
+                  <th>Numéro</th>
+                  <th>Nom du prix</th>
+                  <th>Chance de gagner</th>
+                  <th>EffacerDelete</th>
                 </tr>
                 {prizes?.map((prize, index = 0) => (
                   <tr key={index}>
@@ -107,7 +107,7 @@ const AddPrizes = () => {
               onChange={(e) => SetWinningChance(e.target.value)}
             />
             <button onClick={handleSubmit}>
-              <BsPlusLg /> Add List Item
+              <BsPlusLg /> Ajouter un élément de liste
             </button>
           </div>
         </form>

@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
         />
       </Head>
       <Component {...pageProps} />
-      <CookieConsent buttonStyle={{ backgroundColor: "#008039", fontSize: "16px",color:"#fff" }} buttonText="Accept">This website uses cookies to enhance the user experience.</CookieConsent>
+      <CookieConsent buttonStyle={{ backgroundColor: "#008039", fontSize: "16px",color:"#fff" }} buttonText="Accept">Ce site utilise des cookies pour améliorer l'expérience utilisateur.</CookieConsent>
     </>
   );
 }

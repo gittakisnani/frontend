@@ -34,22 +34,22 @@ const ViewUser = () => {
             <br />
             <br />
             <div className="user-profile">
-              <h2>User details</h2>
+              <h2>Détails de l'utilisateur</h2>
               <div className="item">
                 <i className="uil uil-user"></i>
-                <p>Name &nbsp;&nbsp; : {data.name}</p>
+                <p>Nom &nbsp;&nbsp; : {data.name}</p>
               </div>
               <div className="item">
                 <i className="uil uil-envelope"></i>
-                <p>Email &nbsp;&nbsp;&nbsp;&nbsp;: {data.email}</p>
+                <p>E-mail &nbsp;&nbsp;&nbsp;&nbsp;: {data.email}</p>
               </div>
               <div className="buttons">
                 <Link href="/edituser">
                   <button style={{ backgroundColor: "#008039" }}>
-                    Edit details
+                  Modifier les détails
                   </button>
                 </Link>
-                <button>Delete Account</button>
+                <button>Supprimer le compte</button>
               </div>
             </div>
           </div>

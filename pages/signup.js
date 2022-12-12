@@ -116,7 +116,7 @@ const Signup = () => {
         <main>
           <div className="container">
             <form action="#" className="sign">
-              <h1>Signup</h1>
+              <h1>S'inscrire</h1>
               <div className="fild">
                 <div className="i">
                   <AiOutlineUser />
@@ -177,7 +177,7 @@ const Signup = () => {
               ) : null}
 
               <button className="submit" onClick={(e) => signUp(e)}>
-                Signup
+              S'inscrire
               </button>
 
               {/* <div className="social">
@@ -217,7 +217,7 @@ const Signup = () => {
                   </div>
 
                   <p className="ask">
-                    Already have an account? <a href="/login">Login</a>
+                  Vous avez déjà un compte? <a href="/login">Connexion</a>
                   </p>
                 </>
               ) : null}

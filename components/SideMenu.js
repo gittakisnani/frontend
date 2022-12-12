@@ -28,7 +28,7 @@ const SideMenu = () => {
           <div>
             <AiTwotoneHome />
           </div>
-          <p>Home</p>
+          <p>Maison</p>
         </div>
       </Link>
 
@@ -37,7 +37,7 @@ const SideMenu = () => {
           <div>
             <FaChartPie />
           </div>
-          <p>Contests</p>
+          <p>Concours</p>
         </div>
       </Link>
 
@@ -46,7 +46,7 @@ const SideMenu = () => {
           <div>
             <AiFillGift />
           </div>
-          <p>Prizes</p>
+          <p>Prix</p>
         </div>
       </Link>
 
@@ -55,7 +55,7 @@ const SideMenu = () => {
           <div>
             <HiUserGroup />
           </div>
-          <p>Users</p>
+          <p>Utilisatrices</p>
         </div>
       </Link>
 
@@ -64,7 +64,7 @@ const SideMenu = () => {
           <div>
             <FaUserTie />
           </div>
-          <p>Employees</p>
+          <p>Des employés</p>
         </div>
       </Link>
 
@@ -77,7 +77,7 @@ const SideMenu = () => {
         >
           <IoLogOutSharp />
         </button>
-        <p>Log out</p>
+        <p>Se déconnecter</p>
       </div>
     </div>
   );
