@@ -1,9 +1,8 @@
-
 import SideMenu from "../../components/SideMenu";
 import { FaSearch } from "react-icons/fa";
 import { useEffect, useState } from "react";
-import { BsPlusLg } from 'react-icons/bs';
-import { RiDeleteBin6Line } from 'react-icons/ri';
+import { BsPlusLg } from "react-icons/bs";
+import { RiDeleteBin6Line } from "react-icons/ri";
 import Link from "next/link";
 import axios from "axios";
 
@@ -15,17 +14,16 @@ const AddEmployee = () => {
 
   const [employees, setemployees] = useState([]);
 
-
   useEffect(() => {
-    let userid
-    let userType
+    let userid;
+    let userType;
     try {
       const token = localStorage.getItem("accessToken");
       if (token != null) {
         let jwtSecretKey = "gfg_jwt_secret_key";
         const user = jwt.verify(token, jwtSecretKey);
-        userid=user.userId
-        userType=user.userType
+        userid = user.userId;
+        userType = user.userType;
         console.log(user);
       } else {
         console.log("ELSE");
@@ -37,38 +35,39 @@ const AddEmployee = () => {
       router.push("http://localhost:3000/login");
     }
 
-    if (userType==='User'){
+    if (userType === "User") {
       router.push("http://localhost:3000");
-    }else if(userType==='Employee'){
+    } else if (userType === "Employee") {
       router.push("http://localhost:3000");
-    }else{
-      getempList()
-    
+    } else {
+      getempList();
     }
   }, []);
 
-const getempList =async()=>{
- await axios.get(`http://localhost:3001/api/v1/users`)
-  .then((response)=> {
-    setemployees(response.data)
-    console.log(response.data);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-}
+  const getempList = async () => {
+    await axios
+      .get(`https://dsp-archiwebo21-ss-da-om-en.fr/api/v1/users`)
+      .then((response) => {
+        setemployees(response.data);
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
 
-  const deleteRecord =(id)=>{
-    console.log("delete this id :" ,id)
-    axios.delete('http://localhost:3001/api/v1/users/'+id)
-    .then(response => 
-      {console.log(id);
-        getempList()}
-      )
-    .catch(error => {
-        console.error('There was an error!', error);
-    });
-  }
+  const deleteRecord = (id) => {
+    console.log("delete this id :", id);
+    axios
+      .delete("https://dsp-archiwebo21-ss-da-om-en.fr/api/v1/users/" + id)
+      .then((response) => {
+        console.log(id);
+        getempList();
+      })
+      .catch((error) => {
+        console.error("There was an error!", error);
+      });
+  };
 
   return (
     <div>
@@ -79,8 +78,16 @@ const getempList =async()=>{
             <div className="block active">
               <div className="contest-list">
                 <div className="headerwithbutton">
-                <div><h2>Employees</h2></div>
-                <div><Link href='/admin/createemployee'><button><BsPlusLg/> New Employee</button></Link></div>
+                  <div>
+                    <h2>Employees</h2>
+                  </div>
+                  <div>
+                    <Link href="/admin/createemployee">
+                      <button>
+                        <BsPlusLg /> New Employee
+                      </button>
+                    </Link>
+                  </div>
                 </div>
                 <div className="table">
                   <table>
@@ -90,14 +97,26 @@ const getempList =async()=>{
                         <th>Email</th>
                         <th>Delete</th>
                       </tr>
-                      {employees.length>0 &&
-                      employees.filter((item)=>item.userType==="Employee").map((employee,index) => (
-                        <tr key={index}>
-                          <td>{employee.name}</td>
-                          <td>{employee.email}</td>
-                          <td><center><div className="smalldelete"><button onClick={()=>deleteRecord(employee._id)}><RiDeleteBin6Line/></button></div></center></td>
-                        </tr>
-                      ))}
+                      {employees.length > 0 &&
+                        employees
+                          .filter((item) => item.userType === "Employee")
+                          .map((employee, index) => (
+                            <tr key={index}>
+                              <td>{employee.name}</td>
+                              <td>{employee.email}</td>
+                              <td>
+                                <center>
+                                  <div className="smalldelete">
+                                    <button
+                                      onClick={() => deleteRecord(employee._id)}
+                                    >
+                                      <RiDeleteBin6Line />
+                                    </button>
+                                  </div>
+                                </center>
+                              </td>
+                            </tr>
+                          ))}
                     </tbody>
                   </table>
                 </div>

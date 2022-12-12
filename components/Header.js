@@ -4,44 +4,52 @@ import Link from "next/link";
 import { logout } from "../components/UserFacade";
 
 const Header = () => {
-    const [user, setUser] = useState(null);
-    const router = useRouter();
+  const [user, setUser] = useState(null);
+  const router = useRouter();
+  const [navActive, setNavActive] = useState(false);
 
   return (
     <header className="greenHeader">
-          <div className="container">
-            <div>
-              <div className="logo">
-                <img src="/logo-white.svg" alt="" />
+      <div className="container">
+        <div>
+          <div className="logo">
+            <Link href="/">
+              <img src="/logo-white.svg" alt="" />
+            </Link>
+          </div>
+        </div>
+        <div>
+          <div className={navActive ? "links active" : "links"}>
+            <Link href="/" className="active">
+              HOME
+            </Link>
+            <Link href="/legalnotice">legal notice contest</Link>
+          </div>
+        </div>
+        <div className="outerdd">
+          <div className="dd">
+            {user == null ? (
+              <Link href="/login">
+                <button>Login</button>
+              </Link>
+            ) : (
+              <div>
+                <Link href="/viewuser">
+                  <button>
+                    <FaUserTie />
+                    {user.name}
+                  </button>
+                </Link>
               </div>
-            </div>
-            <div>
-              <div className="links">
-                <a href="/" className="active">
-                  HOME
-                </a>
-                <a href="/legalnotice">legal notice contest</a>
-              </div>
-            </div>
-            <div className="outerdd">
-              <div className="dd">
-                {user == null ? (
-                  <Link href="/login">
-                    <button>Login</button>
-                  </Link>
-                ) : (
-                  <div>
-                    <Link href="/viewuser">
-                      <button>
-                        <FaUserTie />
-                        {user.name}
-                      </button>
-                    </Link>
-                  </div>
-                )}
-                <i className="uil uil-align-center-alt menu"></i>
-              </div>
-              <div className="dd">
+            )}
+            <i
+              className="uil uil-align-center-alt menu"
+              onClick={() => {
+                setNavActive((pre) => !pre);
+              }}
+            ></i>
+          </div>
+          {/* <div className="dd">
                 {user != null ? (
                   <button
                     onClick={() => {
@@ -54,11 +62,11 @@ const Header = () => {
                 ) : null}
 
                 <i className="uil uil-align-center-alt menu"></i>
-              </div>
-            </div>
-          </div>
-        </header>
-  )
-}
+              </div> */}
+        </div>
+      </div>
+    </header>
+  );
+};
 
-export default Header
+export default Header;

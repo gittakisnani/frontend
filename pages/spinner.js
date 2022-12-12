@@ -27,7 +27,9 @@ const Spinner = () => {
   const getPrices = async () => {
     const contestId = localStorage.getItem("contestId");
     await axios
-      .get(`http://localhost:3001/api/v1/contests/` + contestId)
+      .get(
+        `https://dsp-archiwebo21-ss-da-om-en.fr/api/v1/contests/` + contestId
+      )
       .then((response) => {
         if (response.data.chooseprices.length > 0) {
           setSegmants(response.data.chooseprices);
@@ -82,7 +84,10 @@ const Spinner = () => {
     };
 
     axios
-      .post("http://localhost:3001/api/v1/contest-participents", data)
+      .post(
+        "https://dsp-archiwebo21-ss-da-om-en.fr/api/v1/contest-participents",
+        data
+      )
       .then((response) => {
         console.log(response.data);
         if (response.status == "204") {
@@ -103,7 +108,9 @@ const Spinner = () => {
         <div className="container">
           <div className="block active">
             <div className="prize-board">
-              {segmants.length > 0 ?  <CountdownTimer targetDate={dateTimeAfterThreeDays} />: null}
+              {segmants.length > 0 ? (
+                <CountdownTimer targetDate={dateTimeAfterThreeDays} />
+              ) : null}
               <h2>Prizes</h2>
               <div className="table">
                 <table>

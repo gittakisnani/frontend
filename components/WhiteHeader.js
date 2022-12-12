@@ -1,67 +1,72 @@
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import {userDetails} from "./UserFacade";
-import { useState, useEffect } from "react";
 import Link from "next/link";
+import { logout } from "../components/UserFacade";
 
 const WhiteHeader = () => {
+  const [user, setUser] = useState(null);
   const router = useRouter();
-  const [user,setUser]=useState(null);
+  const [navActive, setNavActive] = useState(false);
 
-  useEffect( () => {
-    const user= userDetails();
-    setUser(user.name);
-  }, [])
-  
-
-  const logout = async () => {
-    try {
-      localStorage.removeItem("accessToken");
-      router.push("http://localhost:3000");
-
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-    return ( 
-        <header>
-        <div className="container">
-          <div>
+  return (
+    <header className="">
+      <div className="container">
+        <div>
           <div className="logo">
-            <img src="/logo.svg" alt="" />
+            <Link href="/">
+              <img src="/logo.svg" alt="" />
+            </Link>
           </div>
-
-          </div>
-          <div>
-          <div className="links">
-            <Link href='/' className="active">HOME</Link>
-            <a href="#">legal notice contest</a>
-          </div>
-          </div>
-          
-          <div className="outerdd">
-          <div className="dd">
-            <Link href='/viewuser'><button><i className="uil uil-user">{user}</i></button></Link>
-            <i className="uil uil-align-center-alt menu"></i>
-          </div>
-          <div className="dd">
-              {user != null ? (
-                <button
-                  onClick={() => {
-                    logout();
-                  }}
-                >
-                  Log Out
-                </button>
-              ) : null}
-
-              <i className="uil uil-align-center-alt menu"></i>
-            </div>
-          </div>
-
         </div>
-      </header>
-     );
-}
- 
+        <div>
+          <div className={navActive ? "links active" : "links"}>
+            <Link href="/" className="active">
+              HOME
+            </Link>
+            <Link href="/legalnotice">legal notice contest</Link>
+          </div>
+        </div>
+        <div className="outerdd">
+          <div className="dd">
+            {user == null ? (
+              <Link href="/login">
+                <button>Login</button>
+              </Link>
+            ) : (
+              <div>
+                <Link href="/viewuser">
+                  <button>
+                    <FaUserTie />
+                    {user.name}
+                  </button>
+                </Link>
+              </div>
+            )}
+            <i
+              className="uil uil-align-center-alt menu"
+              onClick={() => {
+                setNavActive((pre) => !pre);
+              }}
+            ></i>
+          </div>
+          {/* <div className="dd">
+                {user != null ? (
+                  <button
+                    onClick={() => {
+                      logout();
+                      setUser(null);
+                    }}
+                  >
+                    Log Out
+                  </button>
+                ) : null}
+
+                <i className="uil uil-align-center-alt menu"></i>
+              </div> */}
+        </div>
+      </div>
+    </header>
+  );
+};
+
 export default WhiteHeader;

@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import jwt from "jsonwebtoken";
 import Link from "next/link";
+import Header from "../components/Header";
 
 const Signup = () => {
   const [name, setName] = useState();
@@ -17,7 +18,8 @@ const Signup = () => {
 
   const getUser = async () => {
     try {
-      const url = "http://localhost:3001/api/v1/auth/google/login/success";
+      const url =
+        "https://dsp-archiwebo21-ss-da-om-en.fr/api/v1/auth/google/login/success";
       const res = await fetch(url, {
         credentials: "include",
         method: "get",
@@ -71,19 +73,22 @@ const Signup = () => {
 
   const signUp = async (e) => {
     e.preventDefault();
-    const res = await fetch("http://localhost:3001/api/v1/auth/sign-up", {
-      method: "post",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: email,
-        name: name,
-        password: password,
-        passportNumber: passportNumber,
-      }),
-    });
+    const res = await fetch(
+      "https://dsp-archiwebo21-ss-da-om-en.fr/api/v1/auth/sign-up",
+      {
+        method: "post",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+          name: name,
+          password: password,
+          passportNumber: passportNumber,
+        }),
+      }
+    );
 
     if (res.status == "200") {
       const data = await res.json();
@@ -95,30 +100,17 @@ const Signup = () => {
   };
 
   const googleAuth = () => {
-    window.open("http://localhost:3001/api/v1/auth/google/callback", "_self");
+    window.open(
+      "https://dsp-archiwebo21-ss-da-om-en.fr/api/v1/auth/google/callback",
+      "_self"
+    );
     // alert("Hello");
   };
 
   return (
     <>
       <div>
-        <header className="greenheader">
-          <div className="container">
-            <div className="logo">
-              <img src="/logo-white.svg" alt="" />
-            </div>
-            <div className="links">
-              <a href="#" className="active">
-                HOME
-              </a>
-              <a href="#">legal notice contest</a>
-            </div>
-
-            <Link href="/login">
-              <button>Login</button>
-            </Link>
-          </div>
-        </header>
+        <Header />
         <main>
           <div className="container">
             <form action="#" className="sign">

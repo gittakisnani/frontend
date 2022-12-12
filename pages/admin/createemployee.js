@@ -7,11 +7,9 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import { useRouter } from "next/router";
 
-
 const CreateEmployee = () => {
-
   const router = useRouter();
-  
+
   const [name, SetName] = useState("");
   const [email, SetEmail] = useState("");
   const [passportNumber, SetPassportNumber] = useState();
@@ -20,17 +18,19 @@ const CreateEmployee = () => {
   const onSubmit = async (e) => {
     // const employee = { name, email, passportNumber, password };
     console.log(e);
-    await fetch("http://localhost:3001/api/v1/auth/add-employee", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + localStorage.getItem("accessToken"),
-      },
-      body: JSON.stringify(e),
-    }).then((res) => {
+    await fetch(
+      "https://dsp-archiwebo21-ss-da-om-en.fr/api/v1/auth/add-employee",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + localStorage.getItem("accessToken"),
+        },
+        body: JSON.stringify(e),
+      }
+    ).then((res) => {
       if (res.status === 200) {
-
-        router.push("http://localhost:3000/admin/addemployee")
+        router.push("http://localhost:3000/admin/addemployee");
       }
     });
   };

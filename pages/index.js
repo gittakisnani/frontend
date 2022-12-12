@@ -10,6 +10,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import Header from "../components/Header";
+import WhiteHeader from "../components/WhiteHeader";
 
 export default function Home() {
   const isAuthenticated = async () => {
@@ -59,7 +60,7 @@ export default function Home() {
 
     try {
       const res = await fetch(
-        "http://localhost:3001/api/v1/contest-participents/ticket-validatation-requests",
+        "https://dsp-archiwebo21-ss-da-om-en.fr/api/v1/contest-participents/ticket-validatation-requests",
         {
           method: "post",
           headers: {
@@ -113,7 +114,7 @@ export default function Home() {
      </div> */}
 
       <div>
-        <Header />
+        <WhiteHeader />
         <main>
           <div className="container">
             <div className="row">

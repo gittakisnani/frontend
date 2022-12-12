@@ -5,31 +5,38 @@ import { RiKey2Fill } from "react-icons/ri";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import jwt from "jsonwebtoken";
+import Header from "../components/Header";
 
 const Login = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const router = useRouter();
 
-  const  googleAuth = async() => {
-  await  window.open("http://localhost:3001/api/v1/auth/google/callback", "_blank");
-  console.log("hello")
+  const googleAuth = async () => {
+    await window.open(
+      "https://dsp-archiwebo21-ss-da-om-en.fr/api/v1/auth/google/callback",
+      "_blank"
+    );
+    console.log("hello");
     // alert("Hello");
   };
 
   const signIn = async (e) => {
     e.preventDefault();
-    const res = await fetch("http://localhost:3001/api/v1/auth/sign-in", {
-      method: "post",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: email,
-        password: password,
-      }),
-    });
+    const res = await fetch(
+      "http://dsp-archiwebo21-ss-da-om-en.fr/api/v1/auth/sign-in",
+      {
+        method: "post",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+          password: password,
+        }),
+      }
+    );
 
     if (res.status == "200") {
       const data = await res.json();
@@ -41,18 +48,18 @@ const Login = () => {
         const user = jwt.verify(token, jwtSecretKey);
         localStorage.setItem("username", user.name);
 
-      if(user.userType==="User"){
-        router.push("http://localhost:3000");
-      }else if(user.userType==="Admin"){
-        router.push("http://localhost:3000/admin/contestlist");
-      }else if(user.userType==="Employee"){
-        router.push("http://localhost:3000");
-      }else{
-        router.push("http://localhost:3000");
+        if (user.userType === "User") {
+          router.push("http://localhost:3000");
+        } else if (user.userType === "Admin") {
+          router.push("http://localhost:3000/admin/contestlist");
+        } else if (user.userType === "Employee") {
+          router.push("http://localhost:3000");
+        } else {
+          router.push("http://localhost:3000");
+        }
       }
-    }
-    } else if(res.status == "422") {
-     alert("Invalid Email or Password")
+    } else if (res.status == "422") {
+      alert("Invalid Email or Password");
     }
   };
 
@@ -77,22 +84,7 @@ const Login = () => {
   return (
     <>
       <div>
-        <header className="greenheader">
-          <div className="container">
-            <div className="logo">
-              <img src="logo-white.svg" alt="" />
-            </div>
-            <div className="links">
-              <Link href="#" className="active">
-                HOME
-              </Link>
-              <Link href="#">legal notice contest</Link>
-            </div>
-            <Link href="/signup">
-              <button>Signup</button>
-            </Link>
-          </div>
-        </header>
+        <Header />
         <main>
           <div className="container">
             <form action="#" className="sign">
@@ -144,11 +136,10 @@ const Login = () => {
               </p>
             </form>
           </div>
-        {/* <footer className="notfixedFooter">
+          {/* <footer className="notfixedFooter">
           <div className="container"></div>
         </footer> */}
         </main>
-
       </div>
     </>
   );

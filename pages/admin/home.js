@@ -15,7 +15,7 @@ const home = () => {
 
   const getUserList = async () => {
     await axios
-      .get("http://localhost:3001/api/v1/dashbord-data")
+      .get("https://dsp-archiwebo21-ss-da-om-en.fr/api/v1/dashbord-data")
       .then((response) => setData(response.data));
   };
   // console.log(data);
