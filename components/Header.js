@@ -19,6 +19,7 @@ const Header = () => {
           </div>
         </div>
         <div>
+          
           <div className={navActive ? "links active" : "links"}>
             <Link href="/" style="color:var(--secoundary)">
               HOME
