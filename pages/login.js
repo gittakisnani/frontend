@@ -49,7 +49,7 @@ const Login = () => {
         localStorage.setItem("username", user.name);
 
         if (user.userType === "User") {
-          router.push("https://dsp-archiwebo21-ss-da-om-en.fr");
+          router.push("https://dsp-archiwebo21-ss-da-om-en.fr/viewuser");
         } else if (user.userType === "Admin") {
           router.push(
             "https://dsp-archiwebo21-ss-da-om-en.fr/admin/contestlist"
@@ -57,7 +57,7 @@ const Login = () => {
         } else if (user.userType === "Employee") {
           router.push("https://dsp-archiwebo21-ss-da-om-en.fr");
         } else {
-          router.push("https://dsp-archiwebo21-ss-da-om-en.fr");
+          router.push("https://dsp-archiwebo21-ss-da-om-en.fr/viewuser");
         }
       }
     } else if (res.status == "422") {

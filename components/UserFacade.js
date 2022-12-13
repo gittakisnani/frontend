@@ -8,10 +8,10 @@ export const userDetails =  () => {
         const user = jwt.verify(token, jwtSecretKey);
        return user;
       } else {
-        console.log("not log");
+        return null
       }
     } catch (err) {
-      console.log(err);
+      return null
     }
   };
 

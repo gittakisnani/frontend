@@ -13,13 +13,14 @@ import Header from "../components/Header";
 import WhiteHeader from "../components/WhiteHeader";
 
 export default function Home() {
+  const [user, setUser] = useState(null)
   const isAuthenticated = async () => {
     try {
       const token = localStorage.getItem("accessToken");
       if (token != null) {
         let jwtSecretKey = "gfg_jwt_secret_key";
-        const user = jwt.verify(token, jwtSecretKey);
-        setUser(user);
+        const users = jwt.verify(token, jwtSecretKey);
+        setUser(users);
       } else {
         console.log("not log");
       }
@@ -68,7 +69,7 @@ export default function Home() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            userId: user.userId,
+            userId: user?.userId,
             ticketId: e.ticketid,
           }),
         }
@@ -244,7 +245,7 @@ export default function Home() {
             <div className="other-info"></div>
           </div>
         </footer>
-        <script src="app.js"></script>
+        {/* <script src="app.js"></script> */}
       </div>
     </>
   );

@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { logout } from "../components/UserFacade";
+import { logout, userDetails } from "../components/UserFacade";
 
 const Header = () => {
   const [user, setUser] = useState(null);
   const router = useRouter();
   const [navActive, setNavActive] = useState(false);
-
+  useEffect(() => {
+    setUser(userDetails())
+    },[])
   return (
     <header className="greenHeader">
       <div className="container">
@@ -37,7 +39,7 @@ const Header = () => {
               <div>
                 <Link href="/viewuser">
                   <button>
-                    <FaUserTie />
+                    {/* <FaUserTie /> */}
                     {user.name}
                   </button>
                 </Link>

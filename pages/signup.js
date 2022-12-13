@@ -96,7 +96,7 @@ const Signup = () => {
       const data = await res.json();
       localStorage.setItem("accessToken", data.accessToken);
       alert("Successfully Registered");
-      router.push("https://dsp-archiwebo21-ss-da-om-en.fr");
+      router.push("https://dsp-archiwebo21-ss-da-om-en.fr/viewuser");
     } else {
     }
   };

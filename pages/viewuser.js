@@ -4,10 +4,12 @@ import { Button, Modal, ModalBody, ModalFooter } from "reactstrap";
 import WhiteHeader from "/components/WhiteHeader";
 import jwt from "jsonwebtoken";
 import axios from "axios";
-import { userDetails } from "../components/UserFacade";
+import { logout, userDetails } from "../components/UserFacade";
+import { useRouter } from "next/router";
 
 const ViewUser = () => {
   const [data, setData] = useState([]);
+  const router = useRouter()
 
   useEffect(() => {
     // const contestId = localStorage.getItem("contestId");
@@ -49,7 +51,11 @@ const ViewUser = () => {
                   Modifier les détails
                   </button>
                 </Link>
-                <button>Supprimer le compte</button>
+                <button  onClick={() => {
+                      logout();
+                      router.push("https://dsp-archiwebo21-ss-da-om-en.fr");
+                    }}
+                    >Supprimer le compte</button>
               </div>
             </div>
           </div>
