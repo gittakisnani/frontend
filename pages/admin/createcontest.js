@@ -123,7 +123,7 @@ const CreateContest = () => {
         }),
       }
     );
-
+console.log(res)
     if (res.status == "422") {
       alert("Entered Data is invalid");
     } else if (res.status == "201") {
