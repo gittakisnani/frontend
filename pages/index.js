@@ -55,7 +55,7 @@ export default function Home() {
 
   const onSubmit = async (e) => {
     const token = localStorage.getItem("accessToken");
-    if (token == null) {
+    if (token == null || user == null) {
       router.push("https://dsp-archiwebo21-ss-da-om-en.fr/login");
     }
 
