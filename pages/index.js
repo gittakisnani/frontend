@@ -11,9 +11,11 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import Header from "../components/Header";
 import WhiteHeader from "../components/WhiteHeader";
+import { useRouter } from "next/router";
 
 export default function Home() {
   const [user, setUser] = useState(null)
+  const router = useRouter()
   const isAuthenticated = async () => {
     try {
       const token = localStorage.getItem("accessToken");
