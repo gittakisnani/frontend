@@ -1,6 +1,7 @@
 import SideMenu from "../../components/SideMenu";
 import UserData from "../../components/UsersData";
 import { FaSearch } from "react-icons/fa";
+import ProtectedRoute from "../../components/ProtectedRoute";
 
 
 const ViewUsers = () => {
@@ -8,8 +9,8 @@ const ViewUsers = () => {
   
 
   return (
-    <div>
-      <SideMenu />
+  <ProtectedRoute>
+       <SideMenu />
       <div className="main-wrap">
         <div className="wrapSection">
           <div className="block active">
@@ -32,7 +33,7 @@ const ViewUsers = () => {
           </div>
         </div>
       </div>
-    </div>
+  </ProtectedRoute>
   );
 };
 

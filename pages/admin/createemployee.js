@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import { useRouter } from "next/router";
+import ProtectedRoute from "../../components/ProtectedRoute";
 
 const CreateEmployee = () => {
   const router = useRouter();
@@ -56,8 +57,8 @@ const CreateEmployee = () => {
 
   return (
     <div>
-      <div>
-        <SideMenu />
+     <ProtectedRoute>
+     <SideMenu />
         <div className="main-wrap">
           <div className="wrapSection">
             <div className="block active">
@@ -121,7 +122,7 @@ const CreateEmployee = () => {
             </div>
           </div>
         </div>
-      </div>
+     </ProtectedRoute>
     </div>
   );
 };

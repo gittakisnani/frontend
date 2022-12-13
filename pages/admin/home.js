@@ -5,6 +5,7 @@ import { PieChart } from "react-minimal-pie-chart";
 import UserData from "../../components/UsersData";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import ProtectedRoute from "../../components/ProtectedRoute";
 
 const home = () => {
   const [data, setData] = useState(null);
@@ -20,7 +21,8 @@ const home = () => {
   };
   // console.log(data);
   return (
-    <div className="home">
+   <ProtectedRoute>
+     <div className="home">
       <SideMenu />
       {/* Top Bar */}
       <div className="topbar">
@@ -109,6 +111,7 @@ const home = () => {
         <UserData />
       </div>
     </div>
+   </ProtectedRoute>
   );
 };
 

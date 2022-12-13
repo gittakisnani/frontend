@@ -4,6 +4,7 @@ import { BsPlusLg } from "react-icons/bs";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import axios from "axios";
 import { useRouter } from "next/router";
+import ProtectedRoute from "../../components/ProtectedRoute";
 
 const AddPrizes = () => {
   const router = useRouter();
@@ -58,8 +59,8 @@ const AddPrizes = () => {
   };
 
   return (
-    <div>
-      <SideMenu />
+   <ProtectedRoute>
+     <SideMenu />
       <div className="block active">
         <div className="prize-board">
           <h2>Prix</h2>
@@ -112,7 +113,7 @@ const AddPrizes = () => {
           </div>
         </form>
       </div>
-    </div>
+   </ProtectedRoute>
   );
 };
 

@@ -8,6 +8,7 @@ import axios from "axios";
 
 import { useRouter } from "next/router";
 import jwt from "jsonwebtoken";
+import ProtectedRoute from "../../components/ProtectedRoute";
 
 const AddEmployee = () => {
   const router = useRouter();
@@ -70,8 +71,8 @@ const AddEmployee = () => {
   };
 
   return (
-    <div>
-      <div>
+  <ProtectedRoute>
+     <div>
         <SideMenu />
         <div className="main-wrap">
           <div className="wrapSection">
@@ -125,7 +126,7 @@ const AddEmployee = () => {
           </div>
         </div>
       </div>
-    </div>
+  </ProtectedRoute>
   );
 };
 

@@ -4,6 +4,7 @@ import { BsPlusLg } from "react-icons/bs";
 import Link from "next/link";
 import axios from "axios";
 import { useRouter } from "next/router";
+import ProtectedRoute from "../../components/ProtectedRoute";
 
 const ContestList = () => {
   const router = useRouter();
@@ -38,7 +39,7 @@ const ContestList = () => {
   };
 
   return (
-    <div>
+    <ProtectedRoute>
       <SideMenu />
       <div className="main-wrap">
         <div className="wrapSection">
@@ -163,7 +164,7 @@ const ContestList = () => {
           </div>
         </div>
       </div>
-    </div>
+    </ProtectedRoute>
   );
 };
 
