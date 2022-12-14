@@ -27,6 +27,9 @@ export default function Home() {
           if(users.userType == "Admin"){
             router.push("/admin/home")
           }
+          if(users.userType == "Employee"){
+router.push("/employee/changeprizestatus")
+          } 
         }
       } else {
         console.log("not log");

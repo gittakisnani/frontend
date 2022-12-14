@@ -36,7 +36,7 @@ const WhiteHeader = () => {
               </Link>
             ) : (
               <div>
-                <Link href={user.name == "nassimabderahmanback" ? "/admin/home" :"/viewuser"}>
+               <Link href={user.userType == "Admin" ? "/admin/home" : user.userType == "Employee" ? "/employee/changeprizestatus" :"/viewuser"}>
                   <button>
                     {/* <FaUserTie /> */}
                     {user.name}
