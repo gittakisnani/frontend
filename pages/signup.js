@@ -32,6 +32,37 @@ const Signup = () => {
           localStorage.setItem("accessToken", data.accessToken);
           router.push("https://dsp-archiwebo21-ss-da-om-en.fr");
         } else {
+          if(!data.user._json.email){
+            return    await getuserFb()
+          }
+          setEmail(data.user._json.email);
+          setName(data.user._json.name);
+          setSocialSign(true);
+        }
+      }else{
+        await getuserFb()
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const getuserFb = async () => {
+    try {
+      const url =
+        "https://dsp-archiwebo21-ss-da-om-en.fr/api/v1/auth/facebook/login/success";
+      const res = await fetch(url, {
+        credentials: "include",
+        method: "get",
+        mode: "cors",
+      });
+      const data = await res.json();
+
+      if (!data.error) {
+        if (data.isAlreadySignUp) {
+          localStorage.setItem("accessToken", data.accessToken);
+          router.push("https://dsp-archiwebo21-ss-da-om-en.fr");
+        } else {
           setEmail(data.user._json.email);
           setName(data.user._json.name);
           setSocialSign(true);
@@ -40,7 +71,7 @@ const Signup = () => {
     } catch (err) {
       console.log(err);
     }
-  };
+  }
 
   const isAuthenticated = async () => {
     try {
