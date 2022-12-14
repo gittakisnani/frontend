@@ -38,7 +38,7 @@ const viewHistory = () => {
     }
 
     if (userType === "Admin") {
-      router.push("https://dsp-archiwebo21-ss-da-om-en.fr/admin/contestlist");
+      router.push("https://dsp-archiwebo21-ss-da-om-en.fr/admin/home");
     } else if (userType === "Employee") {
       router.push("https://dsp-archiwebo21-ss-da-om-en.fr");
     } else {
@@ -141,9 +141,7 @@ const viewHistory = () => {
           </div>
         </div>
       </div>
-      <footer>
-        <div className="container"></div>
-      </footer>
+     
     </>
   );
 };

@@ -119,9 +119,9 @@ const EditUser = () => {
           </div>
         </div>
       </section>
-      <footer>
+      {/* <footer>
         <div className="container"></div>
-      </footer>
+      </footer> */}
     </div>
   );
 };

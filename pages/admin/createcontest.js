@@ -14,7 +14,7 @@ const CreateContest = () => {
   const router = useRouter();
   const [prize, SetPrize] = useState([]);
   //after api call, you should write to prizes with a mew variable "checked"
-
+const [loading, setLoading] = useState(false);
   const [sum, Setsum] = useState(0);
   const [indicator, setindicator] = useState(0); // 0 = not satisfied , 1 = satisfied, 2 = moreThantheshold
   const [buttonDisabled, SetButtonDisabled] = useState(true);
@@ -97,6 +97,7 @@ const CreateContest = () => {
   // };
 
   const onSubmit = async (data) => {
+    setLoading(true)
     let arrayL = prize
       .filter((item) => item.checked == 1)
       .map((item1) => item1.name);
@@ -123,6 +124,7 @@ const CreateContest = () => {
         }),
       }
     );
+    setLoading(false)
 console.log(res)
     if (res.status == "422") {
       alert("Entered Data is invalid");
@@ -272,7 +274,9 @@ console.log(res)
                       </option>
                     ))}
                 </select>
-                {sum === 100 ? (
+                {loading ?  <button type="submit" disabled={false}>
+                   Loading...
+                  </button> : sum === 100 ? (
                   <button type="submit" disabled={false}>
                     Créer un concours
                   </button>

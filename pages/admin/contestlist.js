@@ -51,11 +51,11 @@ const ContestList = () => {
                 </div>
                 {!activeContestExists ? (
                   <div>
-                    <Link href="/admin/createcontest">
+                  
                       <button>
                         <BsPlusLg /> Nouveau concours
                       </button>
-                    </Link>
+                   
                   </div>
                 ) : (
                   <div>
@@ -99,7 +99,7 @@ const ContestList = () => {
                             </td>
 
                             <td>
-                              <Link href="/admin/viewcurrentcontest">
+                             
                                 <button
                                   onClick={() => {
                                     viewContest(contest._id);
@@ -107,7 +107,7 @@ const ContestList = () => {
                                 >
                                   Voir le concours
                                 </button>
-                              </Link>
+                           
                             </td>
                           </tr>
                         );

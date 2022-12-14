@@ -60,13 +60,18 @@ export default function Home() {
   const { register, handleSubmit, reset, formState } = useForm(formOptions);
   const { errors } = formState;
 
+  const [error,setError] = useState("")
+  const [loading, setLoading] = useState(false)
+
   const onSubmit = async (e) => {
+    setError("")
     const token = localStorage.getItem("accessToken");
     if (token == null || user == null) {
       router.push("https://dsp-archiwebo21-ss-da-om-en.fr/login");
     }
 
     try {
+      setLoading(true)
       const res = await fetch(
         "https://dsp-archiwebo21-ss-da-om-en.fr/api/v1/contest-participents/ticket-validatation-requests",
         {
@@ -83,13 +88,13 @@ export default function Home() {
       );
 
       const response = await res.json();
-
+setLoading(false)
       if (res.status == "201") {
         localStorage.setItem("ticketId", response.ticketId);
         localStorage.setItem("contestId", response.contestId);
         router.push("https://dsp-archiwebo21-ss-da-om-en.fr/spinner");
       } else if (res.status == "422") {
-        alert("Entered ticket id is invalid ");
+        setError("Entered ticket id is invalid ");
       }
     } catch (err) {
       console.log(err);
@@ -141,10 +146,12 @@ export default function Home() {
                         errors.ticketid ? "is-invalid" : ""
                       }`}
                     />
-                    <button type="submit">Vérifier le billet</button>
+                    {loading ?  <button disabled={true}>Loading...</button> :  <button type="submit">Vérifier le billet</button>}
+                   
                   </form>
                   <div className="invalid-feedback2">
                     {errors.ticketid?.message}
+                    {error}
                   </div>
                 </div>
               </div>

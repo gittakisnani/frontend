@@ -60,7 +60,7 @@ const Login = () => {
           router.push("https://dsp-archiwebo21-ss-da-om-en.fr/viewuser");
         } else if (user.userType === "Admin") {
           router.push(
-            "https://dsp-archiwebo21-ss-da-om-en.fr/admin/contestlist"
+            "https://dsp-archiwebo21-ss-da-om-en.fr/admin/home"
           );
         } else if (user.userType === "Employee") {
           router.push("https://dsp-archiwebo21-ss-da-om-en.fr");

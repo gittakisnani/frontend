@@ -24,6 +24,27 @@ const ViewUser = () => {
       });
   }, []);
 
+
+  const deleteAccout = async (e) => {
+    let user = userDetails();
+    e.preventDefault();
+   
+    const res = await fetch(
+      "https://dsp-archiwebo21-ss-da-om-en.fr/api/v1/users/" + user.userId,
+      {
+        method: "delete",
+      }
+    );
+
+    if (res.status == "204") {
+      alert("Successfully delete your account");
+      logout();
+      router.push("https://dsp-archiwebo21-ss-da-om-en.fr");
+    } else if (res.status == "422") {
+      alert("Somthing is wrong!");
+    }
+  };
+
   return (
     <div>
       <div className="headercontainer">
@@ -57,13 +78,15 @@ const ViewUser = () => {
                     }}
                     >Supprimer le compte</button>
               </div>
+              <div className="buttons">
+                <button onClick={() => router.push("/viewhistory")}>History</button>
+                <button style={{backgroundColor:"tomato"}} onClick={deleteAccout}>Delete Account</button>
+              </div>
             </div>
           </div>
         </div>
       </section>
-      <footer>
-        <div className="container"></div>
-      </footer>
+     
     </div>
   );
 };
