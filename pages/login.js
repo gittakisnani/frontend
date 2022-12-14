@@ -20,6 +20,14 @@ const Login = () => {
     console.log("hello");
     // alert("Hello");
   };
+  const facebookAuth = async () => {
+    await window.open(
+      "https://dsp-archiwebo21-ss-da-om-en.fr/api/v1/auth/facebook/callback",
+      "_blank"
+    );
+    console.log("hello");
+    // alert("Hello");
+  };
 
   const signIn = async (e) => {
     e.preventDefault();
@@ -129,7 +137,9 @@ const Login = () => {
                 >
                   <img src="/google.svg" /> Google
                 </button>
-                <button>
+                <button   onClick={(e) => {
+                    facebookAuth();
+                  }}>
                   <img src="/fb.svg" /> Facebook
                 </button>
               </div>

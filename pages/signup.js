@@ -109,6 +109,14 @@ const Signup = () => {
     // alert("Hello");
   };
 
+  const facebookAuth = () => {
+    window.open(
+      "https://dsp-archiwebo21-ss-da-om-en.fr/api/v1/auth/facebook/callback",
+      "_self"
+    );
+    // alert("Hello");
+  };
+
   return (
     <>
       <div>

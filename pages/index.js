@@ -23,6 +23,11 @@ export default function Home() {
         let jwtSecretKey = "gfg_jwt_secret_key";
         const users = jwt.verify(token, jwtSecretKey);
         setUser(users);
+        if(users){
+          if(users.userType == "Admin"){
+            router.push("/admin/home")
+          }
+        }
       } else {
         console.log("not log");
       }
@@ -161,7 +166,7 @@ export default function Home() {
                 name="mc-embedded-subscribe-form"
                 className="validate"
                 target="_blank"
-                novalidate
+                noValidate
               >
                 <div id="mc_embed_signup_scroll">
                   <div id="mce-responses" className="clear foot">
@@ -213,7 +218,7 @@ export default function Home() {
                     <input
                       type="text"
                       name="b_17eb0fc9f60a035f869b0fafd_5805488496"
-                      tabindex="-1"
+                      tabIndex="-1"
                     />
                   </div>
                 </div>

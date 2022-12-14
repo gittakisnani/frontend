@@ -49,8 +49,8 @@ const UserData = () => {
           {!isSearch
             ? users
                 .filter((item) => item.prize !== "")
-                .map((users) => (
-                  <tr key={users.id}>
+                .map((users,key) => (
+                  <tr key={key}>
                     <td>{users.name}</td>
                     <td>{users.email}</td>
                     <td>{users.ticketId}</td>
@@ -59,8 +59,8 @@ const UserData = () => {
                 ))
             : searchUsers
                 .filter((item) => item.prize !== "")
-                .map((users) => (
-                  <tr key={users.id}>
+                .map((users,key) => (
+                  <tr key={key}>
                     <td>{users.name}</td>
                     <td>{users.email}</td>
                     <td>{users.ticketId}</td>
