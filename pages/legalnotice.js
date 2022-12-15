@@ -95,8 +95,12 @@ const LegalNotice = () => {
                     // when window width is >= 768px
                     768: {
                     
-                      slidesPerView: 3,
+                      slidesPerView: 2,
                     },
+                    // when window width is >= 768px
+                    1200: {
+                        slidesPerView: 3
+                    }
                   }}
                     pagination={{
                     dynamicBullets: true,
@@ -109,7 +113,7 @@ const LegalNotice = () => {
                     style={{width: "80%", display: "flex", justifyContent: "center", alignItems: "center", marginTop: "2rem"}}
                 >
                     <SwiperSlide >
-                        <div style={{backgroundColor: "#4a4d50", height: "38rem", width: "38rem", borderRadius: "50%" ,margin:"0 auto",display:"flex",justifyContent:"center",alignItems:"center", position: 'relative', overflow: 'hidden'}}>
+                        <div style={{backgroundColor: "#4a4d50", height: "35rem", width: "35rem", borderRadius: "50%" ,margin:"0 auto",display:"flex",justifyContent:"center",alignItems:"center", position: 'relative', overflow: 'hidden'}}>
                         <Image src={Image5} alt='Image' width={300} height={400} style={{ position: 'absolute', backgroundSize: 'cover'}} />
                         <p style={{color:"#fff",padding:"10px"}}>
                         un infuseur à thé  
@@ -117,7 +121,7 @@ const LegalNotice = () => {
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div style={{backgroundColor: "#4a4d50", height: "38rem", width: "38rem", borderRadius: "50%",margin:"0 auto",display:"flex",justifyContent:"center",alignItems:"center", position: 'relative', overflow: 'hidden'}}>
+                        <div style={{backgroundColor: "#4a4d50", height: "35rem", width: "35rem", borderRadius: "50%",margin:"0 auto",display:"flex",justifyContent:"center",alignItems:"center", position: 'relative', overflow: 'hidden'}}>
                         <Image src={Image6} alt='Image' width={300} height={400} style={{ position: 'absolute', backgroundSize: 'cover'}} />
 
                             <p style={{color:"#fff",padding:"10px"}}>
@@ -126,7 +130,7 @@ const LegalNotice = () => {
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div style={{backgroundColor: "#4a4d50", height: "38rem", width: "38rem", borderRadius: "50%",margin:"0 auto",display:"flex",justifyContent:"center",alignItems:"center", position: 'relative', overflow: 'hidden'}}>
+                        <div style={{backgroundColor: "#4a4d50", height: "35rem", width: "35rem", borderRadius: "50%",margin:"0 auto",display:"flex",justifyContent:"center",alignItems:"center", position: 'relative', overflow: 'hidden'}}>
                         <Image src={Image7} alt='Image' width={300} height={400} style={{ position: 'absolute', backgroundSize: 'cover'}} />
 
                             <p style={{color:"#fff",padding:"10px"}}>
@@ -135,7 +139,7 @@ const LegalNotice = () => {
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div style={{backgroundColor: "#4a4d50", height: "38rem", width: "38rem", borderRadius: "50%",margin:"0 auto",display:"flex",justifyContent:"center",alignItems:"center", position: 'relative', overflow: 'hidden',}}>
+                        <div style={{backgroundColor: "#4a4d50", height: "35rem", width: "35rem", borderRadius: "50%",margin:"0 auto",display:"flex",justifyContent:"center",alignItems:"center", position: 'relative', overflow: 'hidden',}}>
                         <Image src={Image8} alt='Image' width={400} height={400} style={{ position: 'absolute', backgroundSize: 'cover'}} />
 
                             <p style={{color:"#fff",padding:"10px"}}>
@@ -144,7 +148,7 @@ const LegalNotice = () => {
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div style={{backgroundColor: "#4a4d50", height: "38rem", width: "38rem", borderRadius: "50%",margin:"0 auto",display:"flex",justifyContent:"center",alignItems:"center", position: 'relative', overflow: 'hidden'}}>
+                        <div style={{backgroundColor: "#4a4d50", height: "35rem", width: "35rem", borderRadius: "50%",margin:"0 auto",display:"flex",justifyContent:"center",alignItems:"center", position: 'relative', overflow: 'hidden'}}>
                         <Image src={Image2} alt='Image' width={300} height={400} style={{ position: 'absolute', backgroundSize: 'cover'}} />
 
                             <p style={{color:"#fff",padding:"10px"}}>

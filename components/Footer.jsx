@@ -3,7 +3,7 @@ import React from 'react'
 import { BsInstagram, BsFacebook } from  'react-icons/bs'
 const Footer = () => {
   return (
-    <footer style={{ background: '#000', padding: '2rem', color: 'white', display: 'flex', flexDirection: 'column', gap: '2rem'}}>
+    <footer style={{ background: '#008039', padding: '2rem', color: 'white', display: 'flex', flexDirection: 'column', gap: '2rem'}}>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)'}}>
         <div>
           <p className='footerTitle'>Liens</p>
