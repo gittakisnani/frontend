@@ -162,7 +162,7 @@ const Signup = () => {
                 </div>
                 <input
                   type="text"
-                  placeholder="Name"
+                  placeholder="Nom"
                   value={name}
                   disabled={isSocialSign ? true : false}
                   onChange={(e) => setName(e.target.value)}
@@ -186,7 +186,7 @@ const Signup = () => {
                 </div>
                 <input
                   type="text"
-                  placeholder="Passport number"
+                  placeholder="Piece d’identité"
                   onChange={(e) => setPassport(e.target.value)}
                 />
               </div>
@@ -209,7 +209,7 @@ const Signup = () => {
 
                   <input
                     type="password"
-                    placeholder="Password"
+                    placeholder="Mot de passe "
                     onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>

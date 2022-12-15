@@ -5,10 +5,18 @@ import Link from "next/link";
 import axios from "axios";
 import { useRouter } from "next/router";
 import ProtectedRoute from "../../components/ProtectedRoute";
+import sortItems from "../../utils/sortFn";
+import Filters from "../../components/Filters";
 
 const ContestList = () => {
   const router = useRouter();
+  const [search, setSearch] = useState('');
+  const [sort, setSort] = useState('')
+  const handleSearch = (e) => setSearch(e.target.value)
+  
 
+  const handleSort = e => setSort(e.target.value)
+  
   const [contests, SetContests] = useState([]);
   const [activeContestExists, SetActiveContestExists] = useState(false);
 
@@ -50,8 +58,8 @@ const ContestList = () => {
                   <h2>Liste du concours</h2>
                 </div>
                 {!activeContestExists ? (
-                  <div>
-                  
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '.5rem'}}>
+                    <Filters handleSearch={handleSearch} handleSort={handleSort} />
                       <button>
                         <BsPlusLg /> Nouveau concours
                       </button>
@@ -78,7 +86,8 @@ const ContestList = () => {
                       <th>Date de fin</th>
                       <th>Statut</th>
                     </tr>
-                    {contests.map((contest) => {
+                    {sortItems(sort, contests.filter(contest => contest.name.toLowerCase().includes(search.toLowerCase())))
+                    .map((contest) => {
                       if (contest.status === "Active") {
                         return (
                           <tr key={contest._id}>

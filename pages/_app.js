@@ -4,8 +4,18 @@ import "../styles/legalnotice.css";
 import Head from "next/head";
 import CookieConsent from "react-cookie-consent";
 import Script from "next/script";
-
+import Footer from "../components/Footer";
+import ReactGA4 from "react-ga4";
+import { useEffect } from "react";
 function MyApp({ Component, pageProps }) {
+
+  useEffect(() => {
+    ReactGA4.initialize('groupelt');
+    ReactGA4.send({ hitType: "pageview", page: window.location.pathname });
+  }, [])
+
+
+  
   return (
     <>
      <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-1WFQ3BGZS0"></Script>
@@ -30,7 +40,19 @@ function MyApp({ Component, pageProps }) {
         />
       </Head>
       <Component {...pageProps} />
-      <CookieConsent buttonStyle={{ backgroundColor: "#008039", fontSize: "16px",color:"#fff" }} buttonText="Accept">Ce site utilise des cookies pour améliorer l'expérience utilisateur.</CookieConsent>
+      <CookieConsent
+      style={{ display: 'flex', flexWrap: 'wrap'}} 
+      buttonStyle={{ backgroundColor: "#008039", fontSize: "16px",color:"#fff" }} 
+      buttonText="Accepter"
+      enableDeclineButton
+      declineButtonText='Refusé'
+      declineButtonStyle={{ backgroundColor: "#008039", fontSize: "16px",color:"#fff" }}
+      >
+        <p style={{ width: '100%', fontSize: '20px', }}>
+        Ce site thétiptop utilise des cookies pour vous offrir une expérience de navigation personnalisée. En continuant à utiliser ce site, vous acceptez notre politique de confidentialité ?
+        </p>
+      </CookieConsent>
+      <Footer />
     </>
   );
 }

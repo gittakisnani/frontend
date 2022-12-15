@@ -24,9 +24,9 @@ const Header = () => {
 
           <div className={navActive ? "links active" : "links"}>
             <Link href="/" style={{color:"var(--secoundary)"}}>
-            DOMICILE
+            Accueil
             </Link>
-            <Link href="/legalnotice" style={{color:"var(--secoundary)"}}>concours mentions légales</Link>
+            <Link href="/legalnotice" style={{color:"var(--secoundary)"}}>Règle du jeu </Link>
           </div>
         </div>
         <div className="outerdd">

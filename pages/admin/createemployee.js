@@ -68,7 +68,7 @@ const CreateEmployee = () => {
                   {name}
                   <input
                     type="text"
-                    placeholder="Employee Name"
+                    placeholder="Nom d'employee"
                     name="name"
                     {...register("name")}
                     className={`form-control ${
@@ -92,7 +92,7 @@ const CreateEmployee = () => {
                   <br />
                   <input
                     type="text"
-                    placeholder="Passport Number"
+                    placeholder="Piece d’identité"
                     name="passportNumber"
                     {...register("passportNumber")}
                     className={`form-control ${
@@ -105,7 +105,7 @@ const CreateEmployee = () => {
                   <br />
                   <input
                     type="password"
-                    placeholder="Password"
+                    placeholder="Mot de passe "
                     name="password"
                     {...register("password")}
                     className={`form-control ${

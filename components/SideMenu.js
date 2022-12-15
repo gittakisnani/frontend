@@ -28,7 +28,7 @@ const SideMenu = () => {
           <div>
             <AiTwotoneHome />
           </div>
-          <p>Maison</p>
+          <p>Accueil</p>
         </div>
       </Link>
 
@@ -55,7 +55,7 @@ const SideMenu = () => {
           <div>
             <HiUserGroup />
           </div>
-          <p>Utilisatrices</p>
+          <p>Utilisateurs</p>
         </div>
       </Link>
 
@@ -64,7 +64,7 @@ const SideMenu = () => {
           <div>
             <FaUserTie />
           </div>
-          <p>Des employés</p>
+          <p>Employés </p>
         </div>
       </Link>
 
@@ -77,7 +77,7 @@ const SideMenu = () => {
         >
           <IoLogOutSharp />
         </button>
-        <p>Se déconnecter</p>
+        <p>Déconnexion </p>
       </div>
     </div>
   );

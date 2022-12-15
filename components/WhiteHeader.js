@@ -23,9 +23,9 @@ const WhiteHeader = () => {
         <div>
           <div className={navActive ? "links active" : "links"}>
             <Link href="/" className="active" style={{color:"black"}}>
-            DOMICILE
+            Accueil 
             </Link>
-            <Link href="/legalnotice" style={{color:"black"}}>concours mentions légales</Link>
+            <Link href="/legalnotice" style={{color:"black"}}>Règle du jeu </Link>
           </div>
         </div>
         <div className="outerdd">

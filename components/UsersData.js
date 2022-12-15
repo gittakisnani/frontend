@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-
-const UserData = () => {
+import sortFn from "../utils/sortFn";
+const UserData = ({ searchText = '', sort = ''}) => {
   const [users, setUsers] = useState([]);
-  const [searchTerm, setsearchTerm] = useState();
   const [searchUsers, setsearchUsers] = useState([]);
   const [isSearch, setsearch] = useState(false);
 
@@ -47,8 +46,8 @@ const UserData = () => {
           </tr>
 
           {!isSearch
-            ? users
-                .filter((item) => item.prize !== "")
+            ? sortFn(sort, users
+                .filter((item) => item.prize !== "" && item.name.toLowerCase().includes(searchText.toLowerCase())))
                 .map((users,key) => (
                   <tr key={key}>
                     <td>{users.name}</td>
@@ -58,7 +57,7 @@ const UserData = () => {
                   </tr>
                 ))
             : searchUsers
-                .filter((item) => item.prize !== "")
+                .filter((item) => item.prize !== "" && item.name.toLowerCase().includes(searchText.toLowerCase())).sort((a, b) => sort === 'aToZ' ? 1 : sort === 'zToA' ? -1 : 0 )
                 .map((users,key) => (
                   <tr key={key}>
                     <td>{users.name}</td>

@@ -143,7 +143,7 @@ setLoading(false)
                   <form onSubmit={handleSubmit(onSubmit)}>
                     <input
                       type="text"
-                      placeholder="Your ticket number"
+                      placeholder="Entrez Votre numéro "
                       {...register("ticketid")}
                       className={`form-control ${
                         errors.ticketid ? "is-invalid" : ""
@@ -168,7 +168,7 @@ setLoading(false)
         <footer>
           <div className="container">
             <div id="mc_embed_signup">
-              <h3 className="tst">Inscription à la newsletter</h3>
+              <h3 className="tst">inscrivez à notre newsletter pour nos prochains jeux de concours </h3>
               <form
                 action="https://gmail.us11.list-manage.com/subscribe/post?u=17eb0fc9f60a035f869b0fafd&amp;id=5805488496&amp;f_id=00b18de0f0"
                 method="post"
@@ -215,7 +215,7 @@ setLoading(false)
                           id="mc-embedded-subscribe"
                           className="button"
                         >
-                          Subscribe
+                           S’inscrire 
                         </button>
                       </div>
                     </div>

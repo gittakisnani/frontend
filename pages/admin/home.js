@@ -43,7 +43,7 @@ const home = () => {
           <HiUsers className="icon-c" />
         </div>
         <div className="total-employee c">
-          <h4>total des empoly</h4>
+          <h4>Total des employés</h4>
           <h2>{data ? data.totalEmpoly : "..."}</h2>
           <HiUsers className="icon-c" />
         </div>
@@ -53,9 +53,9 @@ const home = () => {
       <div className="graphs">
         <div>
           <div className="total-tickets">
-            <h3>Nombre total de billets</h3>
+            <h3>Nombre total des billets</h3>
             <div>
-              <h4>total des ticket</h4>
+              <h4>total des tickets</h4>
               <h2>{data ? data.totalTicket : "..."}</h2>
               <FaTicketAlt className="icon-t" />
             </div>
@@ -64,7 +64,7 @@ const home = () => {
           <div className="total-tickets">
             <h3>Total des billets restants</h3>
             <div style={{ backgroundColor: "red" }}>
-              <h4>total des ticket left</h4>
+              <h4>Total des tickets restants </h4>
               <h2>{data ? data.totalTicketLeft : "..."}</h2>
               <FaTicketAlt className="icon-t" />
             </div>
@@ -77,11 +77,11 @@ const home = () => {
           <div className="ticket-graph">
             <div className="graph-item">
               <div className="ticket-graph t"></div>
-              <h4>ticket graphs</h4>
+              <h4>Tickets restants 94%</h4>
             </div>
             <div className="graph-item">
               <div className="ticket-non-graph t"></div>
-              <h4>tickets non graph</h4>
+              <h4>Tickets utilisés 6%</h4>
             </div>
           </div>
 
@@ -107,9 +107,9 @@ const home = () => {
         </div>
       </div>
 
-      <div className="userData">
+      {/* <div className="userData">
         <UserData />
-      </div>
+      </div> */}
     </div>
    </ProtectedRoute>
   );

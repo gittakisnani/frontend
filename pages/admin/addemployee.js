@@ -3,15 +3,25 @@ import { FaSearch } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { BsPlusLg } from "react-icons/bs";
 import { RiDeleteBin6Line } from "react-icons/ri";
+
 import Link from "next/link";
 import axios from "axios";
 
 import { useRouter } from "next/router";
 import jwt from "jsonwebtoken";
 import ProtectedRoute from "../../components/ProtectedRoute";
+import Filters from "../../components/Filters";
+import sortItems from "../../utils/sortFn";
 
 const AddEmployee = () => {
   const router = useRouter();
+  const [search, setSearch] = useState('');
+  const [sort, setSort] = useState('')
+  const handleSearch = (e) => setSearch(e.target.value)
+  
+
+  const handleSort = e => setSort(e.target.value)
+
 
   const [employees, setemployees] = useState([]);
 
@@ -82,7 +92,8 @@ const AddEmployee = () => {
                   <div>
                     <h2>Des employés</h2>
                   </div>
-                  <div>
+                  <div style={{ display: 'flex', alignItems: 'center',  gap: '1rem'}}>
+                  <Filters handleSearch={handleSearch} handleSort={handleSort} />
                     <Link href="/admin/createemployee">
                       <button>
                         <BsPlusLg /> Nouvel employé
@@ -99,8 +110,8 @@ const AddEmployee = () => {
                         <th>Effacer</th>
                       </tr>
                       {employees.length > 0 &&
-                        employees
-                          .filter((item) => item.userType === "Employee")
+                        sortItems(sort, employees
+                          .filter((item) => item.userType === "Employee" && item.name.toLowerCase().includes(search.toLowerCase())))
                           .map((employee, index) => (
                             <tr key={index}>
                               <td>{employee.name}</td>

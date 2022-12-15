@@ -98,7 +98,7 @@ const Login = () => {
         <main>
           <div className="container">
             <form action="#" className="sign">
-              <h1>LoConnexiongin</h1>
+              <h1>Connexion</h1>
               <div className="fild">
                 <div className="i">
                   <BsEnvelope />
@@ -116,7 +116,7 @@ const Login = () => {
                 </div>
                 <input
                   type="password"
-                  placeholder="Password"
+                  placeholder="Mot de passe "
                   autoComplete="off"
                   onChange={(e) => setPassword(e.target.value)}
                 />
