@@ -77,7 +77,7 @@ const home = () => {
           <div className="ticket-graph">
             <div className="graph-item">
               <div className="ticket-graph t"></div>
-              <h4>Tickets restants 94%</h4>
+              <h4>Tickets restants {Math.ceil((data?.totalTicketLeft / data?.totalTicket) * 100)}</h4>
             </div>
             <div className="graph-item">
               <div className="ticket-non-graph t"></div>

@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { BsEnvelope } from "react-icons/bs";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import jwt from "jsonwebtoken";
 import { FaUserTie } from "react-icons/fa";
 
@@ -14,7 +14,9 @@ import WhiteHeader from "../components/WhiteHeader";
 import { useRouter } from "next/router";
 
 export default function Home() {
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState(null);
+  const [success, setSuccess] = useState(false);
+  const emailRef = useRef()
   const router = useRouter()
   const isAuthenticated = async () => {
     try {
@@ -104,6 +106,13 @@ setLoading(false)
     }
   };
 
+
+  const handleSubmitEmail = (e) => {
+    e.preventDefault();
+    if(!emailRef.current.value) return false;
+    setSuccess(true)
+  }
+
   return (
     <>
       {/* <div className={styles.container}>
@@ -168,10 +177,11 @@ setLoading(false)
         <footer>
           <div className="container">
             <div id="mc_embed_signup">
-              <h3 className="tst">inscrivez à notre newsletter pour nos prochains jeux de concours </h3>
-              <form
-                action="https://gmail.us11.list-manage.com/subscribe/post?u=17eb0fc9f60a035f869b0fafd&amp;id=5805488496&amp;f_id=00b18de0f0"
-                method="post"
+              <h3 className="tst">{success ? 'Email submitted successfully' : 'inscrivez à notre newsletter pour nos prochains jeux de concours'} </h3>
+              {!success && <form
+                // action="https://gmail.us11.list-manage.com/subscribe/post?u=17eb0fc9f60a035f869b0fafd&amp;id=5805488496&amp;f_id=00b18de0f0"
+                // method="post"
+                onSubmit={handleSubmitEmail}
                 id="mc-embedded-subscribe-form"
                 name="mc-embedded-subscribe-form"
                 className="validate"
@@ -194,6 +204,7 @@ setLoading(false)
                   <div className="signup">
                     <div className="mc-field-group">
                       <input
+                        ref={emailRef}
                         type="email"
                         name="EMAIL"
                         placeholder="Email"
@@ -232,12 +243,12 @@ setLoading(false)
                     />
                   </div>
                 </div>
-              </form>
+              </form>}
             </div>
-            <script
+            {/* <script
               type="text/javascript"
               src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"
-            ></script>
+            ></script> */}
             {/* <script type="text/javascript">
           (function ($) {
             window.fnames = new Array();
