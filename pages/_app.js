@@ -10,7 +10,7 @@ import { useEffect } from "react";
 function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
-    ReactGA4.initialize('groupelt');
+    ReactGA4.initialize('G-NXLM9R29M9');
     ReactGA4.send({ hitType: "pageview", page: window.location.pathname });
   }, [])
 
